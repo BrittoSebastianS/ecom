@@ -26,7 +26,7 @@ public class InventoryService {
     }
 
     public List<InventoryResponse> stockAvailability(List<String> skuCodes) {
-        List<Inventory> inventories = inventoryRepository.findBySkuCodesIn(skuCodes);
+        List<Inventory> inventories = inventoryRepository.findBySkuCodeIn(skuCodes);
 
         return inventories.stream().map(inventory -> mapToInventoryResponse(inventory)).toList();
     }
